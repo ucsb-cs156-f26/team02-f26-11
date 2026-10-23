@@ -4,7 +4,7 @@ const ucsbOrganizationFixtures = {
       orgCode: "ULT",
       orgTranslationShort: "Smash Club",
       orgTranslation: "Smash Bros Ultimate Club @ UCSB",
-      inactive: "false",
+      inactive: false,
     },
   ],
 
@@ -13,21 +13,21 @@ const ucsbOrganizationFixtures = {
       orgCode: "BMN",
       orgTranslationShort: "Badminton Club",
       orgTranslation: "Badminton Sport Club",
-      inactive: "false",
+      inactive: false,
     },
 
     {
       orgCode: "BSK",
       orgTranslationShort: "Basketball Club",
       orgTranslation: "Basketball Sport Club",
-      inactive: "true",
+      inactive: true,
     },
 
     {
       orgCode: "TBL",
       orgTranslationShort: "Tabletop Club",
       orgTranslation: "Tabletop Games Club @ UCSB",
-      inactive: "false",
+      inactive: false,
     },
   ],
 };
