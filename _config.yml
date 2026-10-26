@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/team02-f26-11
 owner: ucsb-cs156-f26
 repo_name: team02-f26-11
-pull_requests: [{"author":{"id":"U_kgDOB7IEzw","is_bot":false,"login":"Tylerraff","name":""},"headRefName":"tr-menuitemreview-backend","number":68,"title":"tr- copy files for backend CRUD API MenuItemReview from team01 - #65","url":"https://github.com/ucsb-cs156-f26/team02-f26-11/pull/68"},{"author":{"id":"U_kgDOBtPylQ","is_bot":false,"login":"xzifork","name":"Chazz Yu"},"headRefName":"cy-RecommendationRequest-create-fixtures","number":66,"title":"cy - Create fixtures for RecommendationRequest","url":"https://github.com/ucsb-cs156-f26/team02-f26-11/pull/66"}]
+pull_requests: [{"author":{"id":"U_kgDOB7IEzw","is_bot":false,"login":"Tylerraff","name":""},"headRefName":"tr-menuitemreview-backend","number":68,"title":"tr- copy files for backend CRUD API MenuItemReview from team01 - #65","url":"https://github.com/ucsb-cs156-f26/team02-f26-11/pull/68"}]
