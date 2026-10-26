@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -193,7 +193,20 @@
 <a name='L128'></a><a href='#L128'>128</a>
 <a name='L129'></a><a href='#L129'>129</a>
 <a name='L130'></a><a href='#L130'>130</a>
-<a name='L131'></a><a href='#L131'>131</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,18 +220,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">21x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -337,8 +363,14 @@ function UCSBOrganizationForm({
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm({ defaultValues: {...initialContents, inactive:
-        initialContents?.inactive === undefined ? "" : <span class="branch-1 cbranch-no" title="branch not covered" >String(initialContents.inactive), }</span>,
+  } = useForm({
+    defaultValues: {
+      ...initialContents,
+      inactive:
+        initialContents?.inactive === undefined
+          ? ""
+          : String(initialContents.inactive),
+    },
   });
   // Stryker restore all
 &nbsp;
@@ -347,43 +379,48 @@ function UCSBOrganizationForm({
   const testIdPrefix = "UCSBOrganizationForm";
 &nbsp;
   return (
-    &lt;Form onSubmit={handleSubmit(<span class="fstat-no" title="function not covered" >(d</span>ata) =&gt;
-<span class="cstat-no" title="statement not covered" >        submitAction({...data, inactive: data.inactive === "true", })</span>
+    &lt;Form
+      onSubmit={handleSubmit((data) =&gt;
+        submitAction({ ...data, inactive: data.inactive === "true" }),
       )}
     &gt;
-    {initialContents ? (
-      &lt;Form.Group className="mb-3"&gt;
-        &lt;Form.Label htmlFor="orgCode"&gt;Organization Code&lt;/Form.Label&gt;
-        &lt;Form.Control
-          data-testid={testIdPrefix + "-orgCode"}
-          id="orgCode"
-          type="text"
-          value={initialContents.orgCode}
-          disabled
-        /&gt;
-      &lt;/Form.Group&gt; ) : (
-      &lt;Form.Group className="mb-3"&gt;
-        &lt;Form.Label htmlFor="orgCode"&gt;Organization Code&lt;/Form.Label&gt;
-        &lt;Form.Control
-          data-testid={testIdPrefix + "-orgCode"}
-          id="orgCode"
-          type="text"
-          isInvalid={Boolean(errors.orgCode)}
-          {...register("orgCode", {
-            required: "Organization code is required.",
-            maxLength: {
-              value: 3,
-              message: "Maximum length is 3 characters",
-            },
-          })}
-        /&gt;
-        &lt;Form.Control.Feedback type="invalid"&gt;
-          {errors.orgCode?.message}
-        &lt;/Form.Control.Feedback&gt;
-      &lt;/Form.Group&gt; )}
+      {initialContents ? (
+        &lt;Form.Group className="mb-3"&gt;
+          &lt;Form.Label htmlFor="orgCode"&gt;Organization Code&lt;/Form.Label&gt;
+          &lt;Form.Control
+            data-testid={testIdPrefix + "-orgCode"}
+            id="orgCode"
+            type="text"
+            value={initialContents.orgCode}
+            disabled
+          /&gt;
+        &lt;/Form.Group&gt;
+      ) : (
+        &lt;Form.Group className="mb-3"&gt;
+          &lt;Form.Label htmlFor="orgCode"&gt;Organization Code&lt;/Form.Label&gt;
+          &lt;Form.Control
+            data-testid={testIdPrefix + "-orgCode"}
+            id="orgCode"
+            type="text"
+            isInvalid={Boolean(errors.orgCode)}
+            {...register("orgCode", {
+              required: "Organization code is required.",
+              maxLength: {
+                value: 3,
+                message: "Maximum length is 3 characters",
+              },
+            })}
+          /&gt;
+          &lt;Form.Control.Feedback type="invalid"&gt;
+            {errors.orgCode?.message}
+          &lt;/Form.Control.Feedback&gt;
+        &lt;/Form.Group&gt;
+      )}
 &nbsp;
       &lt;Form.Group className="mb-3"&gt;
-        &lt;Form.Label htmlFor="orgTranslationShort"&gt;Short Organization Name&lt;/Form.Label&gt;
+        &lt;Form.Label htmlFor="orgTranslationShort"&gt;
+          Short Organization Name
+        &lt;/Form.Label&gt;
         &lt;Form.Control
           data-testid={testIdPrefix + "-orgTranslationShort"}
           id="orgTranslationShort"
@@ -419,7 +456,9 @@ function UCSBOrganizationForm({
       &lt;/Form.Group&gt;
 &nbsp;
       &lt;Form.Group className="mb-3"&gt;
-        &lt;Form.Label htmlFor="inactive"&gt;Is the Organization Inactive?&lt;/Form.Label&gt;
+        &lt;Form.Label htmlFor="inactive"&gt;
+          Is the Organization Inactive?
+        &lt;/Form.Label&gt;
 &nbsp;
         &lt;Form.Select
           id="inactive"
@@ -460,7 +499,7 @@ export default UCSBOrganizationForm;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-10-26T23:15:56.060Z
+                at 2026-10-26T23:51:42.944Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
