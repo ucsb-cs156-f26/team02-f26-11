@@ -1,12 +1,12 @@
 const helpRequestFixtures = {
   oneHelpRequest: {
-      id: 1,
-      requesterEmail: "email@ucsb.edu",
-      teamId: "f26-6pm-11",
-      tableOrBreakoutRoom: "11",
-      requestTime: "2026-01-02T12:00:00",
-      explanation: "Dokku problems",
-      solved: true,
+    id: 1,
+    requesterEmail: "email@ucsb.edu",
+    teamId: "f26-6pm-11",
+    tableOrBreakoutRoom: "11",
+    requestTime: "2026-01-02T12:00:00",
+    explanation: "Dokku problems",
+    solved: true,
   },
   threeHelpRequests: [
     {
