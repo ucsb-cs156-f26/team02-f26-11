@@ -6,7 +6,7 @@ const helpRequestFixtures = {
       tableOrBreakoutRoom: "11",
       requestTime: "2026-01-02T12:00:00",
       explanation: "Dokku problems",
-      solved: false,
+      solved: true,
   },
   threeHelpRequests: [
     {
@@ -16,7 +16,7 @@ const helpRequestFixtures = {
       tableOrBreakoutRoom: "11",
       requestTime: "2026-01-02T12:00:00",
       explanation: "Dokku problems",
-      solved: false,
+      solved: true,
     },
     {
       id: 2,
