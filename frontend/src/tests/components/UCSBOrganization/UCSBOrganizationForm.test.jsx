@@ -18,8 +18,9 @@ vi.mock("react-router", async () => {
 describe("UCSBOrganizationForm tests", () => {
   const queryClient = new QueryClient();
 
-  const expectedHeaders = ["orgCode", "orgTranslationShort", "orgTranslation", "inactive"];
-  const testId = "UCBSOrganizationForm";
+  const expectedHeaders = ["Organization Code", "Short Organization Name",
+    "Full Organization Name", "Is the Organization Inactive?"];
+  const testId = "UCSBOrganizationForm";
 
   test("renders correctly with no initialContents", async () => {
     render(
@@ -54,8 +55,8 @@ describe("UCSBOrganizationForm tests", () => {
       expect(header).toBeInTheDocument();
     });
 
-    expect(await screen.findByTestId(`${testId}-id`)).toBeInTheDocument();
-    expect(screen.getByText(`Id`)).toBeInTheDocument();
+    expect(await screen.findByTestId(`${testId}-orgCode`)).toBeInTheDocument();
+    expect(screen.getByText(`Organization Code`)).toBeInTheDocument();
   });
 
   test("that navigate(-1) is called when Cancel is clicked", async () => {
@@ -87,15 +88,20 @@ describe("UCSBOrganizationForm tests", () => {
     const submitButton = screen.getByText(/Create/);
     fireEvent.click(submitButton);
 
-    await screen.findByText(/Name is required/);
-    expect(screen.getByText(/Description is required/)).toBeInTheDocument();
+    await screen.findByText(/Organization code is required/);
+    expect(screen.getByText(/Short organization name is required/)).toBeInTheDocument();
+    expect(screen.getByText(/Full organization name is required/)).toBeInTheDocument();
+    expect(screen.getByText(/Organization status is required/)).toBeInTheDocument();
 
-    const nameInput = screen.getByTestId(`${testId}-name`);
-    fireEvent.change(nameInput, { target: { value: "a".repeat(31) } });
+    const orgInput = screen.getByTestId(`${testId}-orgCode`);
+    const shortInput = screen.getByTestId(`${testId}-orgTranslationShort`);
+    fireEvent.change(orgInput, { target: { value: "a".repeat(4) } });
+    fireEvent.change(shortInput, { target: { value: "a".repeat(101) } });
     fireEvent.click(submitButton);
 
     await waitFor(() => {
-      expect(screen.getByText(/Max length 30 characters/)).toBeInTheDocument();
+      expect(screen.getByText(/Maximum length is 3 characters/)).toBeInTheDocument();
+      expect(screen.getByText(/Maximum length is 100 characters/)).toBeInTheDocument();
     });
   });
 });

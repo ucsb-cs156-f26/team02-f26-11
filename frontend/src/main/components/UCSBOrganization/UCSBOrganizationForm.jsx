@@ -45,10 +45,10 @@ function UCSBOrganizationForm({
           type="text"
           isInvalid={Boolean(errors.orgCode)}
           {...register("orgCode", {
-            required: "orgCode is required.",
+            required: "Organization code is required.",
             maxLength: {
               value: 3,
-              message: "Max length 3 characters",
+              message: "Maximum length is 3 characters",
             },
           })}
         />
@@ -65,10 +65,10 @@ function UCSBOrganizationForm({
           type="text"
           isInvalid={Boolean(errors.orgTranslationShort)}
           {...register("orgTranslationShort", {
-            required: "orgTranslationShort is required.",
+            required: "Short organization name is required.",
             maxLength: {
               value: 100,
-              message: "Maximum length is 100 characters.",
+              message: "Maximum length is 100 characters",
             },
           })}
         />
@@ -85,7 +85,7 @@ function UCSBOrganizationForm({
           type="text"
           isInvalid={Boolean(errors.orgTranslation)}
           {...register("orgTranslation", {
-            required: "orgTranslation is required.",
+            required: "Full organization name is required.",
           })}
         />
         <Form.Control.Feedback type="invalid">
