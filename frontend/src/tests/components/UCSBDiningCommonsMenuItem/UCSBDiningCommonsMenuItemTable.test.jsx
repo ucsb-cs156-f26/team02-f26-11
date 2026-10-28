@@ -202,51 +202,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
       ),
     );
   });
-  /*
-  test("Delete button calls delete callback", async () => {
-    // arrange
-    const currentUser = currentUserFixtures.adminUser;
 
-    const axiosMock = new AxiosMockAdapter(axios);
-    axiosMock
-      .onDelete("/api/ucsbdiningcommonsmenuitem")
-      .reply(200, { message: "UCSBDiningCommonsMenuItem deleted" });
-
-    // act - render the component
-    render(
-      <QueryClientProvider client={queryClient}>
-        <MemoryRouter>
-          <UCSBDiningCommonsMenuItemTable
-            UCSBDiningCommonsMenuItem={
-              ucsbDiningCommonsMenuItemFixtures.threeUCSBDiningCommonsMenuItems
-            }
-            currentUser={currentUser}
-          />
-        </MemoryRouter>
-      </QueryClientProvider>,
-    );
-
-    // assert - check that the expected content is rendered
-    expect(
-      await screen.findByTestId(`${testId}-cell-row-0-col-id`),
-    ).toHaveTextContent("2");
-    expect(
-      screen.getByTestId(`${testId}-cell-row-0-col-name`),
-    ).toHaveTextContent("Roast Beef");
-
-    const deleteButton = screen.getByTestId(
-      `${testId}-cell-row-0-col-Delete-button`,
-    );
-    expect(deleteButton).toBeInTheDocument();
-
-    // act - click the delete button
-    fireEvent.click(deleteButton);
-
-    // assert - check that the delete endpoint was called
-    await waitFor(() => expect(axiosMock.history.delete.length).toBe(1));
-    expect(axiosMock.history.delete[0].params).toEqual({ id: 2 });
-  });
-  */
   test("Delete button calls delete callback", async () => {
     // arrange
     const currentUser = currentUserFixtures.adminUser;
