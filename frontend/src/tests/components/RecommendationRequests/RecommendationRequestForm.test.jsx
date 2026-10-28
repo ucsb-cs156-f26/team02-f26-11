@@ -80,14 +80,10 @@ describe("RecommendationRequestForm tests", () => {
     ).toBeInTheDocument();
 
     await screen.findByText(/Date Requested is required./);
-    expect(
-      screen.getByText(/Date Requested is required./),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Date Requested is required./)).toBeInTheDocument();
 
     await screen.findByText(/Date Needed is required./);
-    expect(
-      screen.getByText(/Date Needed is required./),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Date Needed is required./)).toBeInTheDocument();
   });
 
   test("Correct Error messages on missing input", async () => {
