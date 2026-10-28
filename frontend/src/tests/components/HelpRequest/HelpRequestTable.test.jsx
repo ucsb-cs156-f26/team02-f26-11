@@ -19,8 +19,24 @@ vi.mock("react-router", async () => {
 describe("HelpRequestTable tests", () => {
   const queryClient = new QueryClient();
 
-  const expectedHeaders = ["id", "Requester Email", "Team Id", "Table Or Breakout Room", "Request Time", "Explanation", "Solved"];
-  const expectedFields = ["id", "requesterEmail", "teamId", "tableOrBreakoutRoom", "requestTime", "explanation", "solved"];
+  const expectedHeaders = [
+    "id",
+    "Requester Email",
+    "Team Id",
+    "Table Or Breakout Room",
+    "Request Time",
+    "Explanation",
+    "Solved",
+  ];
+  const expectedFields = [
+    "id",
+    "requesterEmail",
+    "teamId",
+    "tableOrBreakoutRoom",
+    "requestTime",
+    "explanation",
+    "solved",
+  ];
   const testId = "HelpRequestTable";
 
   test("renders empty table correctly", () => {
@@ -248,7 +264,7 @@ describe("HelpRequestTable tests", () => {
     expect(
       screen.getByTestId(`${testId}-cell-row-2-col-solved`),
     ).toHaveTextContent("false");
-    
+
     expect(screen.queryByText("Delete")).not.toBeInTheDocument();
     expect(screen.queryByText("Edit")).not.toBeInTheDocument();
   });
@@ -270,10 +286,10 @@ describe("HelpRequestTable tests", () => {
     );
 
     // assert - check that the expected content is rendered
-    expect(await screen.getByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent(
-      "1",
-    );
-    
+    expect(
+      await screen.getByTestId(`${testId}-cell-row-0-col-id`),
+    ).toHaveTextContent("1");
+
     const editButton = screen.getByTestId(
       `${testId}-cell-row-0-col-Edit-button`,
     );
@@ -310,9 +326,9 @@ describe("HelpRequestTable tests", () => {
     );
 
     // assert - check that the expected content is rendered
-    expect(await screen.getByTestId(`${testId}-cell-row-0-col-id`)).toHaveTextContent(
-      "1",
-    );
+    expect(
+      await screen.getByTestId(`${testId}-cell-row-0-col-id`),
+    ).toHaveTextContent("1");
 
     const deleteButton = screen.getByTestId(
       `${testId}-cell-row-0-col-Delete-button`,
