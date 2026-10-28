@@ -26,7 +26,7 @@ function ArticlesForm({
   // Stryker restore Regex
 
   // Stryker disable next-line all
-  const yyyyq_regex = /((19)|(20))\d{2}[1-4]/i; // Accepts from 1900-2099 followed by 1-4.  Close enough.
+  //const yyyyq_regex = /((19)|(20))\d{2}[1-4]/i; // Accepts from 1900-2099 followed by 1-4.  Close enough.
 
   return (
     <Form onSubmit={handleSubmit(submitAction)}>
@@ -139,6 +139,21 @@ function ArticlesForm({
               {errors.name?.message}
             </Form.Control.Feedback>
           </Form.Group>
+        </Col>
+      </Row>
+      
+      <Row>
+        <Col>
+          <Button type="submit" data-testid="Articles-submit">
+            {buttonLabel}
+          </Button>
+          <Button
+            variant="Secondary"
+            onClick={() => navigate(-1)}
+            data-testid="Articles-cancel"
+          >
+            Cancel
+          </Button>
         </Col>
       </Row>
     </Form>
