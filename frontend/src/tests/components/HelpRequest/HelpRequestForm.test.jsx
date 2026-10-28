@@ -113,4 +113,43 @@ describe("HelpRequestForm tests", () => {
       expect(screen.getByText(/Max length 255 characters/)).toBeInTheDocument();
     });
   });
+
+  test("No Error messsages on good input", async () => {
+    const mockSubmitAction = vi.fn();
+
+    render(
+      <Router>
+        <HelpRequestForm submitAction={mockSubmitAction} />
+      </Router>,
+    );
+    await screen.findByTestId(`${testId}-requesterEmail`);
+
+    const requesterEmailField = screen.getByTestId(`${testId}-requesterEmail`);
+    const teamIdField = screen.getByTestId(`${testId}-teamId`);
+    const tableOrBreakoutRoomField = screen.getByTestId(
+      `${testId}-tableOrBreakoutRoom`,
+    );
+    const requestTimeField = screen.getByTestId(`${testId}-requestTime`);
+    const explanationField = screen.getByTestId(`${testId}-explanation`);
+    const solvedField = screen.getByTestId(`${testId}-solved`);
+    const submitButton = screen.getByTestId(`${testId}-submit`);
+
+    fireEvent.change(requesterEmailField, {
+      target: { value: "email@ucsb.edu" },
+    });
+    fireEvent.change(teamIdField, { target: { value: "f26-6pm-11" } });
+    fireEvent.change(tableOrBreakoutRoomField, { target: { value: "11" } });
+    fireEvent.change(requestTimeField, {
+      target: { value: "2026-01-02T12:00:00" },
+    });
+    fireEvent.change(explanationField, { target: { value: "Dokku problems" } });
+    fireEvent.change(solvedField, { target: { value: true } });
+    fireEvent.click(submitButton);
+
+    await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
+
+    expect(
+      screen.queryByText(/Max length 255 characters/),
+    ).not.toBeInTheDocument();
+  });
 });
