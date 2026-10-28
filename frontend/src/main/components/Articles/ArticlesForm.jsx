@@ -145,4 +145,4 @@ function ArticlesForm({
   );
 }
 
-export default UCSBDateForm;
+export default ArticlesForm;
