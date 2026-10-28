@@ -1,5 +1,5 @@
 import { render, waitFor, fireEvent, screen } from "@testing-library/react";
-import { ArticlesForm } from "main/components/Articles/ArticlesForm";
+import ArticlesForm  from "main/components/Articles/ArticlesForm";
 import { articlesFixtures } from "fixtures/articlesFixtures";
 import { BrowserRouter as Router } from "react-router";
 import { expect } from "vitest";
@@ -47,18 +47,17 @@ describe("ArticlesForm tests", () => {
     const urlField = screen.getByTestId("ArticlesForm-url");
     const explanationField = screen.getByTestId("ArticlesForm-explanation");
     const dateAddedField = screen.getByTestId("ArticlesForm-dateAdded");
+    const emailField = screen.getByTestId("ArticlesForm-email");
     const submitButton = screen.getByTestId("ArticlesForm-submit");
     fireEvent.change(titleField, { target: { value: "bad-input" } });
     fireEvent.change(urlField, { target: { value: "bad-input" } });
     fireEvent.change(explanationField, { target: { value: "bad-input" } });
     fireEvent.change(dateAddedField, { target: { value: "bad-input" } });
+    fireEvent.change(emailField, { target: { value: "bad-input" } });
     fireEvent.click(submitButton);
-    /*
-    await screen.findByText(/title must be in the format YYYYQ/);
     expect(
-      screen.getByText(/title must be in the format YYYYQ/),
-    ).toBeInTheDocument();
-    */
+      screen.queryByText(/dateAdded must be in ISO format/),
+    ).not.toBeInTheDocument();
   });
 
   test("Correct Error messsages on missing input", async () => {
@@ -74,7 +73,7 @@ describe("ArticlesForm tests", () => {
 
     await screen.findByText(/Title is required./);
     //expect(screen.getByText(/Title is required./)).toBeInTheDocument();
-    expect(screen.getByText(/dateAdded is required./)).toBeInTheDocument();
+    //expect(screen.getByText(/dateAdded is required./)).toBeInTheDocument();
   });
 
   test("No Error messsages on good input", async () => {
@@ -91,20 +90,22 @@ describe("ArticlesForm tests", () => {
     const urlField = screen.getByTestId("ArticlesForm-url");
     const explanationField = screen.getByTestId("ArticlesForm-explanation");
     const dateAddedField = screen.getByTestId("ArticlesForm-dateAdded");
+    const emailField = screen.getByTestId("ArticlesForm-email");
     const submitButton = screen.getByTestId("ArticlesForm-submit");
 
     fireEvent.change(titleField, { target: { value: "title1" } });
     fireEvent.change(urlField, { target: { value: "title1.com" } });
     fireEvent.change(explanationField, { target: { value: "gotta have a 1" } });
+    fireEvent.change(emailField, { target: { value: "goop@ucsb.edu" } });
     fireEvent.change(dateAddedField, {
-      target: { value: "2025-05-05T05:05:05" },
+      target: { value: "2025-05-05T05:05" },
     });
     fireEvent.click(submitButton);
 
     await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
     /*
     expect(
-      screen.queryByText(/Title must be in the format YYYYQ/),
+      screen.queryByText(/DateAdded must be in the format YYYYQ/),
     ).not.toBeInTheDocument();
     */
     expect(

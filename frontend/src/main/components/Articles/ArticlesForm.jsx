@@ -51,7 +51,7 @@ function ArticlesForm({
           <Form.Group className="mb-3">
             <Form.Label htmlFor="title">Title</Form.Label>
             <Form.Control
-              data-testid="Articles-title"
+              data-testid="ArticlesForm-title"
               id="title"
               type="text"
               isInvalid={Boolean(errors.title)}
@@ -68,7 +68,7 @@ function ArticlesForm({
           <Form.Group className="mb-3">
             <Form.Label htmlFor="dateAdded">Date (iso format)</Form.Label>
             <Form.Control
-              data-testid="Articles-dateAdded"
+              data-testid="ArticlesForm-dateAdded"
               id="dateAdded"
               type="datetime-local"
               isInvalid={Boolean(errors.dateAdded)}
@@ -78,7 +78,7 @@ function ArticlesForm({
               })}
             />
             <Form.Control.Feedback type="invalid">
-              {errors.localDateTime && "dateAdded is required. "}
+              {errors.localDateTime && "dateAdded is required."}
             </Form.Control.Feedback>
           </Form.Group>
         </Col>
@@ -89,7 +89,7 @@ function ArticlesForm({
           <Form.Group className="mb-3">
             <Form.Label htmlFor="url">URL</Form.Label>
             <Form.Control
-              data-testid="Articles-url"
+              data-testid="ArticlesForm-url"
               id="url"
               type="text"
               isInvalid={Boolean(errors.url)}
@@ -108,7 +108,7 @@ function ArticlesForm({
           <Form.Group className="mb-3">
             <Form.Label htmlFor="explanation">Explanation</Form.Label>
             <Form.Control
-              data-testid="Articles-explanation"
+              data-testid="ArticlesForm-explanation"
               id="explanation"
               type="text"
               isInvalid={Boolean(errors.explanation)}
@@ -127,7 +127,7 @@ function ArticlesForm({
           <Form.Group className="mb-3">
             <Form.Label htmlFor="email">Email</Form.Label>
             <Form.Control
-              data-testid="Articles-email"
+              data-testid="ArticlesForm-email"
               id="email"
               type="text"
               isInvalid={Boolean(errors.email)}
@@ -144,13 +144,13 @@ function ArticlesForm({
       
       <Row>
         <Col>
-          <Button type="submit" data-testid="Articles-submit">
+          <Button type="submit" data-testid="ArticlesForm-submit">
             {buttonLabel}
           </Button>
           <Button
             variant="Secondary"
             onClick={() => navigate(-1)}
-            data-testid="Articles-cancel"
+            data-testid="ArticlesForm-cancel"
           >
             Cancel
           </Button>
