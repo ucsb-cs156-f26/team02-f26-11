@@ -7,7 +7,7 @@ const articlesFixtures = {
     email:"goop@ucsb.edu",
     localDateTime:"2025-05-05T05:05:05",
   },
-  threeDates: [
+  threeArticles: [
     {
       id: 1,
       title: "title1",
@@ -35,4 +35,4 @@ const articlesFixtures = {
   ],
 };
 
-export { ArticlesFixtures };
+export { articlesFixtures };

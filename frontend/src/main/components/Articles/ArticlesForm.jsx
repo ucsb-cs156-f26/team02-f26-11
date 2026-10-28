@@ -87,7 +87,7 @@ function ArticlesForm({
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="url">Name</Form.Label>
+            <Form.Label htmlFor="url">URL</Form.Label>
             <Form.Control
               data-testid="Articles-url"
               id="url"
@@ -106,7 +106,7 @@ function ArticlesForm({
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="explanation">Name</Form.Label>
+            <Form.Label htmlFor="explanation">Explanation</Form.Label>
             <Form.Control
               data-testid="Articles-explanation"
               id="explanation"
@@ -125,7 +125,7 @@ function ArticlesForm({
       <Row>
         <Col>
           <Form.Group className="mb-3">
-            <Form.Label htmlFor="email">Name</Form.Label>
+            <Form.Label htmlFor="email">Email</Form.Label>
             <Form.Control
               data-testid="Articles-email"
               id="email"
