@@ -41,7 +41,7 @@ function UCSBDiningCommonsMenuItemForm({
           data-testid={testIdPrefix + "-diningCommonsCode"}
           id="diningCommonsCode"
           type="text"
-          isInvalid={Boolean(errors.station)}
+          isInvalid={Boolean(errors.diningCommonsCode)}
           {...register("diningCommonsCode", {
             required: "Dining Commons Code is required.",
           })}
