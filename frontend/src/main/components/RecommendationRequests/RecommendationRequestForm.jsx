@@ -22,7 +22,7 @@ function RecommendationRequestForm({
 
   // Stryker disable Regex
   const email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
+
   const isodate_regex =
     /(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d)/i;
   // Stryker restore Regex
@@ -121,7 +121,7 @@ function RecommendationRequestForm({
                 pattern: {
                   value: isodate_regex,
                   message: "Date Requested must be a valid date.",
-                }
+                },
               })}
             />
             <Form.Control.Feedback type="invalid">
@@ -142,7 +142,7 @@ function RecommendationRequestForm({
                 pattern: {
                   value: isodate_regex,
                   message: "Date Needed must be a valid date.",
-                }
+                },
               })}
             />
             <Form.Control.Feedback type="invalid">
