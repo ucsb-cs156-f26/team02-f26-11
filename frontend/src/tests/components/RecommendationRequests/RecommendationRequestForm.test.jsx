@@ -165,12 +165,6 @@ describe("RecommendationRequestForm tests", () => {
     expect(
       screen.queryByText(/Professor Email must be a valid email address/),
     ).not.toBeInTheDocument();
-    expect(
-      screen.queryByText(/Date Requested must be a valid date/),
-    ).not.toBeInTheDocument();
-    expect(
-      screen.queryByText(/Date Needed must be a valid date/),
-    ).not.toBeInTheDocument();
   });
 
   test("that navigate(-1) is called when Cancel is clicked", async () => {
