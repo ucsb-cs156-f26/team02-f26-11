@@ -1,5 +1,5 @@
 import { render, waitFor, fireEvent, screen } from "@testing-library/react";
-import ArticlesForm  from "main/components/Articles/ArticlesForm";
+import ArticlesForm from "main/components/Articles/ArticlesForm";
 import { articlesFixtures } from "fixtures/articlesFixtures";
 import { BrowserRouter as Router } from "react-router";
 import { expect } from "vitest";
@@ -57,7 +57,19 @@ describe("ArticlesForm tests", () => {
     fireEvent.click(submitButton);
     expect(
       screen.queryByText(/dateAdded must be in ISO format/),
-    ).not.toBeInTheDocument();
+    ).toBeInTheDocument();
+        expect(
+      screen.queryByText(/Title is required./),
+    ).toBeInTheDocument();
+        expect(
+      screen.queryByText(/URL is required./),
+    ).toBeInTheDocument();
+        expect(
+      screen.queryByText(/Explanation is required./),
+    ).toBeInTheDocument();
+        expect(
+      screen.queryByText(/Email is required./),
+    ).toBeInTheDocument();
   });
 
   test("Correct Error messsages on missing input", async () => {
@@ -103,13 +115,20 @@ describe("ArticlesForm tests", () => {
     fireEvent.click(submitButton);
 
     await waitFor(() => expect(mockSubmitAction).toHaveBeenCalled());
-    /*
-    expect(
-      screen.queryByText(/DateAdded must be in the format YYYYQ/),
-    ).not.toBeInTheDocument();
-    */
     expect(
       screen.queryByText(/dateAdded must be in ISO format/),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/dateAdded is required./),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/URL is required./),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/Explanation is required./),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(/Email is required./),
     ).not.toBeInTheDocument();
   });
 
