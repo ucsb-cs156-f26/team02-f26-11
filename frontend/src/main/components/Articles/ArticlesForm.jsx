@@ -78,7 +78,7 @@ function ArticlesForm({
               })}
             />
             <Form.Control.Feedback type="invalid">
-              {errors.localDateTime && "dateAdded is required."}
+              {errors.dateAdded && "dateAdded is required."}
             </Form.Control.Feedback>
           </Form.Group>
         </Col>

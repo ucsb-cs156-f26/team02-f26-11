@@ -73,7 +73,7 @@ describe("ArticlesForm tests", () => {
 
     await screen.findByText(/Title is required./);
     //expect(screen.getByText(/Title is required./)).toBeInTheDocument();
-    //expect(screen.getByText(/dateAdded is required./)).toBeInTheDocument();
+    expect(screen.getByText(/dateAdded is required./)).toBeInTheDocument();
   });
 
   test("No Error messsages on good input", async () => {
