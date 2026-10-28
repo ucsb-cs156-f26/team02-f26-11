@@ -36,13 +36,24 @@ describe("UCSBDiningCommonsMenuItemForm tests", () => {
       const header = screen.getByText(headerText);
       expect(header).toBeInTheDocument();
     });
+
+    expect(
+      screen.getByTestId(`${testId}-diningCommonsCode`),
+    ).toBeInTheDocument();
+    expect(screen.getByTestId(`${testId}-name`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${testId}-station`)).toBeInTheDocument();
+    expect(screen.getByTestId(`${testId}-submit`)).toBeInTheDocument();
   });
 
   test("renders correctly when passing in initialContents", async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <Router>
-          <UCSBDiningCommonsMenuItemForm initialContents={ucsbDiningCommonsMenuItemFixtures.oneUCSBDiningCommonsMenuItem} />
+          <UCSBDiningCommonsMenuItemForm
+            initialContents={
+              ucsbDiningCommonsMenuItemFixtures.oneUCSBDiningCommonsMenuItem
+            }
+          />
         </Router>
       </QueryClientProvider>,
     );

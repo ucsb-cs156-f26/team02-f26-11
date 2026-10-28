@@ -41,13 +41,9 @@ function UCSBDiningCommonsMenuItemForm({
           data-testid={testIdPrefix + "-diningCommonsCode"}
           id="diningCommonsCode"
           type="text"
-          isInvalid={Boolean(errors.diningCommonsCode)}
+          isInvalid={Boolean(errors.station)}
           {...register("diningCommonsCode", {
             required: "Dining Commons Code is required.",
-            maxLength: {
-              value: 30,
-              message: "Max length 30 characters",
-            },
           })}
         />
         <Form.Control.Feedback type="invalid">
