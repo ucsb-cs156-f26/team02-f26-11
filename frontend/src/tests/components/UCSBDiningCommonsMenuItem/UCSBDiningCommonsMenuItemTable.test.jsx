@@ -32,7 +32,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            ucsbDiningCommonsMenuItems={[]}
+            UCSBDiningCommonsMenuItem={[]}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -62,7 +62,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            ucsbDiningCommonsMenuItems={
+            UCSBDiningCommonsMenuItem={
               ucsbDiningCommonsMenuItemFixtures.threeUCSBDiningCommonsMenuItems
             }
             currentUser={currentUser}
@@ -118,7 +118,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            ucsbDiningCommonsMenuItems={
+            UCSBDiningCommonsMenuItem={
               ucsbDiningCommonsMenuItemFixtures.threeUCSBDiningCommonsMenuItems
             }
             currentUser={currentUser}
@@ -165,7 +165,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            ucsbDiningCommonsMenuItems={
+            UCSBDiningCommonsMenuItem={
               ucsbDiningCommonsMenuItemFixtures.threeUCSBDiningCommonsMenuItems
             }
             currentUser={currentUser}
@@ -212,7 +212,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <UCSBDiningCommonsMenuItemTable
-            ucsbDiningCommonsMenuItems={
+            UCSBDiningCommonsMenuItem={
               ucsbDiningCommonsMenuItemFixtures.threeUCSBDiningCommonsMenuItems
             }
             currentUser={currentUser}
