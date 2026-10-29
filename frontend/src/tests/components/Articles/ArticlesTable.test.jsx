@@ -33,8 +33,22 @@ describe("UserTable tests", () => {
       </QueryClientProvider>,
     );
 
-    const expectedHeaders = ["id", "Title", "URL", "Explanation", "Email", "Date"];
-    const expectedFields = ["id", "title", "url", "explanation", "email", "dateAdded"];
+    const expectedHeaders = [
+      "id",
+      "Title",
+      "URL",
+      "Explanation",
+      "Email",
+      "Date",
+    ];
+    const expectedFields = [
+      "id",
+      "title",
+      "url",
+      "explanation",
+      "email",
+      "dateAdded",
+    ];
     const testId = "ArticlesTable";
 
     expectedHeaders.forEach((headerText) => {
@@ -79,8 +93,22 @@ describe("UserTable tests", () => {
       </QueryClientProvider>,
     );
 
-    const expectedHeaders = ["id", "Title", "URL", "Explanation", "Email", "Date"];
-    const expectedFields = ["id", "title", "url", "explanation", "email", "dateAdded"];
+    const expectedHeaders = [
+      "id",
+      "Title",
+      "URL",
+      "Explanation",
+      "Email",
+      "Date",
+    ];
+    const expectedFields = [
+      "id",
+      "title",
+      "url",
+      "explanation",
+      "email",
+      "dateAdded",
+    ];
     const testId = "ArticlesTable";
 
     expectedHeaders.forEach((headerText) => {
@@ -150,9 +178,7 @@ describe("UserTable tests", () => {
     const currentUser = currentUserFixtures.adminUser;
 
     const axiosMock = new AxiosMockAdapter(axios);
-    axiosMock
-      .onDelete("/api/Article")
-      .reply(200, { message: "Date deleted" });
+    axiosMock.onDelete("/api/Article").reply(200, { message: "Date deleted" });
 
     // act - render the component
     render(
