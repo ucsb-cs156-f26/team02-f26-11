@@ -176,11 +176,51 @@ function App() {
 
       {/* RecommendationRequest */}
       {hasRole(currentUser, "ROLE_USER") && (
-        <Route
-          exact
-          path="/recommendationrequest"
-          element={<RecommendationRequestIndexPage />}
-        />
+        <>
+          <Route exact path="/placeholder" element={<PlaceholderIndexPage />} />
+        </>
+      )}
+      {hasRole(currentUser, "ROLE_ADMIN") && (
+        <>
+          <Route
+            exact
+            path="/placeholder/edit/:id"
+            element={<PlaceholderEditPage />}
+          />
+          <Route
+            exact
+            path="/placeholder/create"
+            element={<PlaceholderCreatePage />}
+          />
+        </>
+      )}
+      {hasRole(currentUser, "ROLE_USER") && (
+        <>
+          <Route exact path="/articles" element={<ArticlesIndexPage />} />
+        </>
+      )}
+      {hasRole(currentUser, "ROLE_ADMIN") && (
+        <>
+          <Route
+            exact
+            path="/articles/edit/:id"
+            element={<ArticlesEditPage />}
+          />
+          <Route
+            exact
+            path="/articles/create"
+            element={<ArticlesCreatePage />}
+          />
+        </>
+      )}
+      {hasRole(currentUser, "ROLE_USER") && (
+        <>
+          <Route
+            exact
+            path="/recommendationrequest"
+            element={<RecommendationRequestIndexPage />}
+          />
+        </>
       )}
       {hasRole(currentUser, "ROLE_ADMIN") && (
         <>
