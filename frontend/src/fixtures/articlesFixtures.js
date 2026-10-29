@@ -5,7 +5,7 @@ const articlesFixtures = {
     url: "title1.com",
     explanation: "gotta have a 1",
     email: "goop@ucsb.edu",
-    localDateTime: "2025-05-05T05:05:05",
+    dateAdded: "2025-05-05T05:05:05",
   },
   threeArticles: [
     {
@@ -14,7 +14,7 @@ const articlesFixtures = {
       url: "title1.com",
       explanation: "gotta have a 1",
       email: "goop@ucsb.edu",
-      localDateTime: "2025-05-05T05:05:05",
+      dateAdded: "2025-05-05T05:05:05",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const articlesFixtures = {
       url: "title2.com",
       explanation: "gotta have a 2",
       email: "twoop@ucsb.edu",
-      localDateTime: "2022-02-02T02:02:02",
+      dateAdded: "2022-02-02T02:02:02",
     },
     {
       id: 3,
@@ -30,7 +30,7 @@ const articlesFixtures = {
       url: "title3.com",
       explanation: "gotta have a 3",
       email: "threep@ucsb.edu",
-      localDateTime: "2023-03-03T03:03:03",
+      dateAdded: "2023-03-03T03:03:03",
     },
   ],
 };
