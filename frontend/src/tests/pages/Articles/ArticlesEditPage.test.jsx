@@ -70,9 +70,7 @@ describe("ArticlesEditPage tests", () => {
 
       await screen.findByText(/Welcome/);
       await screen.findByText("Edit Articles");
-      expect(
-        screen.queryByTestId("Articles-title"),
-      ).not.toBeInTheDocument();
+      expect(screen.queryByTestId("Articles-title")).not.toBeInTheDocument();
       restoreConsole();
     });
   });
@@ -124,9 +122,7 @@ describe("ArticlesEditPage tests", () => {
       );
       await screen.findByText(/Welcome/);
       await screen.findByTestId("ArticlesForm-title");
-      expect(
-        screen.getByTestId("ArticlesForm-title"),
-      ).toBeInTheDocument();
+      expect(screen.getByTestId("ArticlesForm-title")).toBeInTheDocument();
     });
 
     test("Is populated with the data provided", async () => {
@@ -139,14 +135,14 @@ describe("ArticlesEditPage tests", () => {
       );
 
       await screen.findByTestId("ArticlesForm-title");
-    
-    const idField = screen.getByTestId("ArticlesForm-id");
-    const titleField = screen.getByTestId("ArticlesForm-title");
-    const urlField = screen.getByTestId("ArticlesForm-url");
-    const explanationField = screen.getByTestId("ArticlesForm-explanation");
-    const emailField = screen.getByTestId("ArticlesForm-email");
-    const dateAddedField = screen.getByTestId("ArticlesForm-dateAdded");
-    const submitButton = screen.getByTestId("ArticlesForm-submit");
+
+      const idField = screen.getByTestId("ArticlesForm-id");
+      const titleField = screen.getByTestId("ArticlesForm-title");
+      const urlField = screen.getByTestId("ArticlesForm-url");
+      const explanationField = screen.getByTestId("ArticlesForm-explanation");
+      const emailField = screen.getByTestId("ArticlesForm-email");
+      const dateAddedField = screen.getByTestId("ArticlesForm-dateAdded");
+      const submitButton = screen.getByTestId("ArticlesForm-submit");
 
       expect(idField).toHaveValue("17");
       expect(titleField).toHaveValue("articles.title");
@@ -188,7 +184,7 @@ describe("ArticlesEditPage tests", () => {
       fireEvent.change(titleField, { target: { value: "title2" } });
       fireEvent.change(urlField, { target: { value: "url2" } });
       fireEvent.change(explanationField, { target: { value: "explanation2" } });
-      fireEvent.change(emailField, { target: { value: "email2" } });      
+      fireEvent.change(emailField, { target: { value: "email2" } });
       fireEvent.change(dateAddedField, {
         target: { value: "2022-12-25T08:00" },
       });
