@@ -25,7 +25,7 @@ Default.parameters = {
         status: 200,
       });
     }),
-    http.post("/api/restaurants/post", () => {
+    http.post("/api/ucsbdiningcommonsmenuitem/post", () => {
       return HttpResponse.json({}, { status: 200 });
     }),
   ],
