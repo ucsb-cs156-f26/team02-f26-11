@@ -29,7 +29,7 @@ export default function ArticlesIndexPage() {
     status: _status,
   } = useBackend(
     // Stryker disable next-line all : don't test internal caching of React Query
-    ["/api/ucsbdates/all"],
+    ["/api/articles/all"],
     { method: "GET", url: "/api/articles/all" },
     [],
   );
