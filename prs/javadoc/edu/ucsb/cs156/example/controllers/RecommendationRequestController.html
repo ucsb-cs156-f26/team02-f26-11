@@ -63,7 +63,7 @@ loadScripts(document, 'script');</script>
 </li>
 <li><a href="#method-detail" tabindex="0">Method Details</a>
 <ol class="toc-list">
-<li><a href="#allRecommendationRequests()" tabindex="0">allRecommendationRequests()</a></li>
+<li><a href="#allRecommendationRequest()" tabindex="0">allRecommendationRequest()</a></li>
 <li><a href="#getById(java.lang.Long)" tabindex="0">getById(Long)</a></li>
 <li><a href="#postRecommendationRequest(java.lang.String,java.lang.String,java.lang.String,java.time.LocalDateTime,java.time.LocalDateTime,boolean)" tabindex="0">postRecommendationRequest(String, String, String, LocalDateTime, LocalDateTime, boolean)</a></li>
 <li><a href="#updateRecommendationRequest(java.lang.Long,edu.ucsb.cs156.example.entities.RecommendationRequest)" tabindex="0">updateRecommendationRequest(Long, RecommendationRequest)</a></li>
@@ -85,11 +85,11 @@ loadScripts(document, 'script');</script>
 <section class="class-description" id="class-description">
 <hr>
 <div class="horizontal-scroll">
-<div class="type-signature"><span class="annotations">@RequestMapping("/api/recommendationrequests")
+<div class="type-signature"><span class="annotations">@RequestMapping("/api/recommendationrequest")
 @RestController
 </span><span class="modifiers">public class </span><span class="element-name type-name-label">RecommendationRequestController</span>
 <span class="extends-implements">extends <a href="ApiController.html" title="class in edu.ucsb.cs156.example.controllers">ApiController</a></span></div>
-<div class="block">This is a REST controller for RecommendationRequests</div>
+<div class="block">This is a REST controller for RecommendationRequest</div>
 </div>
 </section>
 <section class="summary">
@@ -119,9 +119,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a><wbr>&lt;<a href="../entities/RecommendationRequest.html" title="class in edu.ucsb.cs156.example.entities">RecommendationRequest</a>&gt;</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allRecommendationRequests()" class="member-name-link">allRecommendationRequests</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#allRecommendationRequest()" class="member-name-link">allRecommendationRequest</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">List all recommendation requests</div>
+<div class="block">List recommendation request</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deleteRecommendationRequest(java.lang.Long)" class="member-name-link">deleteRecommendationRequest</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Long.html" title="class or interface in java.lang" class="external-link">Long</a>&nbsp;id)</code></div>
@@ -186,13 +186,13 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="allRecommendationRequests()">
-<h3>allRecommendationRequests</h3>
+<section class="detail" id="allRecommendationRequest()">
+<h3>allRecommendationRequest</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="annotations">@PreAuthorize("hasRole('ROLE_USER')")
 @GetMapping("/all")
-</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="../entities/RecommendationRequest.html" title="class in edu.ucsb.cs156.example.entities">RecommendationRequest</a>&gt;</span>&nbsp;<span class="element-name">allRecommendationRequests</span>()</div>
-<div class="block">List all recommendation requests</div>
+</span><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Iterable.html" title="class or interface in java.lang" class="external-link">Iterable</a>&lt;<a href="../entities/RecommendationRequest.html" title="class in edu.ucsb.cs156.example.entities">RecommendationRequest</a>&gt;</span>&nbsp;<span class="element-name">allRecommendationRequest</span>()</div>
+<div class="block">List recommendation request</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>an iterable of RecommendationRequest</dd>
