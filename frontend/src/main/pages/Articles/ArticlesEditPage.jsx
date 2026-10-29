@@ -76,4 +76,3 @@ export default function ArticlesEditPage({ storybook = false }) {
     </BasicLayout>
   );
 }
-
