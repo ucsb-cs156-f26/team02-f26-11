@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor} from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import UCSBDiningCommonsMenuItemCreatePage from "main/pages/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemCreatePage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router";
@@ -69,7 +69,9 @@ describe("UCSBDiningCommonsMenuItemCreatePage tests", () => {
       station: "Entree",
     };
 
-    axiosMock.onPost("/api/ucsbdiningcommonsmenuitem/post").reply(202, ucsbdiningcommonsmenuitem);
+    axiosMock
+      .onPost("/api/ucsbdiningcommonsmenuitem/post")
+      .reply(202, ucsbdiningcommonsmenuitem);
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
