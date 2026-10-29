@@ -58,7 +58,7 @@ describe("RecommendationRequestTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <RecommendationRequestTable
-            recommendationRequest={recommendationRequestFixtures.threeDates}
+            recommendationRequest={recommendationRequestFixtures.threeRequests}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -90,7 +90,7 @@ describe("RecommendationRequestTable tests", () => {
       expect(header).toBeInTheDocument();
     });
 
-    recommendationRequestFixtures.threeDates.forEach((request, row) => {
+    recommendationRequestFixtures.threeRequests.forEach((request, row) => {
       expectedFields.forEach((field) => {
         expect(
           screen.getByTestId(`${testId}-cell-row-${row}-col-${field}`),
@@ -123,7 +123,7 @@ describe("RecommendationRequestTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <RecommendationRequestTable
-            recommendationRequest={recommendationRequestFixtures.threeDates}
+            recommendationRequest={recommendationRequestFixtures.threeRequests}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -155,7 +155,7 @@ describe("RecommendationRequestTable tests", () => {
       expect(header).toBeInTheDocument();
     });
 
-    recommendationRequestFixtures.threeDates.forEach((request, row) => {
+    recommendationRequestFixtures.threeRequests.forEach((request, row) => {
       expectedFields.forEach((field) => {
         expect(
           screen.getByTestId(`${testId}-cell-row-${row}-col-${field}`),
@@ -190,7 +190,7 @@ describe("RecommendationRequestTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <RecommendationRequestTable
-            recommendationRequest={recommendationRequestFixtures.threeDates}
+            recommendationRequest={recommendationRequestFixtures.threeRequests}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -230,7 +230,7 @@ describe("RecommendationRequestTable tests", () => {
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
           <RecommendationRequestTable
-            recommendationRequest={recommendationRequestFixtures.threeDates}
+            recommendationRequest={recommendationRequestFixtures.threeRequests}
             currentUser={currentUser}
           />
         </MemoryRouter>
