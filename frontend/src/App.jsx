@@ -23,6 +23,14 @@ import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 import HelpRequestCreatePage from "main/pages/HelpRequest/HelpRequestCreatePage";
 import HelpRequestEditPage from "main/pages/HelpRequest/HelpRequestEditPage";
 
+import PlaceholderIndexPage from "main/pages/HelpRequest/PlaceholderIndexPage";
+import PlaceholderCreatePage from "main/pages/HelpRequest/PlaceholderCreatePage";
+import PlaceholderEditPage from "main/pages/HelpRequest/PlaceholderEditPage";
+
+import ArticlesIndexPage from "main/pages/HelpRequest/ArticlesIndexPage";
+import ArticlesCreatePage from "main/pages/HelpRequest/ArticlesCreatePage";
+import ArticlesEditPage from "main/pages/HelpRequest/ArticlesEditPage";
+
 import MenuItemReviewIndexPage from "main/pages/MenuItemReview/MenuItemReviewIndexPage";
 import MenuItemReviewCreatePage from "main/pages/MenuItemReview/MenuItemReviewCreatePage";
 import MenuItemReviewEditPage from "main/pages/MenuItemReview/MenuItemReviewEditPage";
