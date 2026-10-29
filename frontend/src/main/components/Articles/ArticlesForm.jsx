@@ -98,8 +98,9 @@ function ArticlesForm({
               })}
             />
             <Form.Control.Feedback type="invalid">
-              {errors.name?.message}
+              {errors.url && "URL is required."}
             </Form.Control.Feedback>
+            
           </Form.Group>
         </Col>
       </Row>
@@ -117,7 +118,7 @@ function ArticlesForm({
               })}
             />
             <Form.Control.Feedback type="invalid">
-              {errors.name?.message}
+              {errors.explanation && "Explanation is required."}
             </Form.Control.Feedback>
           </Form.Group>
         </Col>
@@ -136,7 +137,7 @@ function ArticlesForm({
               })}
             />
             <Form.Control.Feedback type="invalid">
-              {errors.name?.message}
+              {errors.email && "Email is required."}
             </Form.Control.Feedback>
           </Form.Group>
         </Col>
