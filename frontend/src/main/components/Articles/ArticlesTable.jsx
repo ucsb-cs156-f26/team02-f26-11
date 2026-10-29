@@ -5,7 +5,7 @@ import { useBackendMutation } from "main/utils/useBackend";
 import {
   cellToAxiosParamsDelete,
   onDeleteSuccess,
-} from "main/utils/UCSBDateUtils";
+} from "main/utils/ArticlesUtils";
 import { useNavigate } from "react-router";
 import { hasRole } from "main/utils/useCurrentUser";
 
@@ -21,7 +21,7 @@ export default function ArticlesTable({ articles, currentUser }) {
   const deleteMutation = useBackendMutation(
     cellToAxiosParamsDelete,
     { onSuccess: onDeleteSuccess },
-    ["/api/Articles/all"],
+    ["/api/articles/all"],
   );
   // Stryker restore all
 
