@@ -60,7 +60,7 @@ function ArticlesForm({
               })}
             />
             <Form.Control.Feedback type="invalid">
-              {errors.title && "Title is required. "}
+              {errors.title && "Title is required."}
             </Form.Control.Feedback>
           </Form.Group>
         </Col>
@@ -141,7 +141,7 @@ function ArticlesForm({
           </Form.Group>
         </Col>
       </Row>
-      
+
       <Row>
         <Col>
           <Button type="submit" data-testid="ArticlesForm-submit">
