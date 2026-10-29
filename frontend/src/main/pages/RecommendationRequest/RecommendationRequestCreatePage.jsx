@@ -1,12 +1,12 @@
 import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
-import RecommendationRequestForm from "main/components/RecommendationRequests/RecommendationRequestForm";
+import RecommendationRequestForm from "main/components/RecommendationRequest/RecommendationRequestForm";
 import { Navigate } from "react-router";
 import { useBackendMutation } from "main/utils/useBackend";
 import { toast } from "react-toastify";
 
 export default function RecommendationRequestCreatePage({ storybook = false }) {
   const objectToAxiosParams = (recommendationRequest) => ({
-    url: "/api/recommendationrequests/post",
+    url: "/api/recommendationrequest/post",
     method: "POST",
     params: {
       requesterEmail: recommendationRequest.requesterEmail,
@@ -28,7 +28,7 @@ export default function RecommendationRequestCreatePage({ storybook = false }) {
     objectToAxiosParams,
     { onSuccess },
     // Stryker disable next-line all : hard to set up test for caching
-    ["/api/recommendationrequests/all"],
+    ["/api/recommendationrequest/all"],
   );
 
   const { isSuccess } = mutation;
@@ -38,7 +38,7 @@ export default function RecommendationRequestCreatePage({ storybook = false }) {
   };
 
   if (isSuccess && !storybook) {
-    return <Navigate to="/recommendationrequests" />;
+    return <Navigate to="/recommendationrequest" />;
   }
 
   return (

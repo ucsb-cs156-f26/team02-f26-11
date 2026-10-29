@@ -3,10 +3,10 @@ import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 import { http, HttpResponse } from "msw";
 
-import RecommendationRequestCreatePage from "main/pages/RecommendationRequests/RecommendationRequestCreatePage";
+import RecommendationRequestCreatePage from "main/pages/RecommendationRequest/RecommendationRequestCreatePage";
 
 export default {
-  title: "pages/RecommendationRequests/RecommendationRequestCreatePage",
+  title: "pages/RecommendationRequest/RecommendationRequestCreatePage",
   component: RecommendationRequestCreatePage,
 };
 
@@ -25,7 +25,7 @@ Default.parameters = {
         status: 200,
       });
     }),
-    http.post("/api/recommendationrequests/post", () => {
+    http.post("/api/recommendationrequest/post", () => {
       return HttpResponse.json({}, { status: 200 });
     }),
   ],

@@ -1,6 +1,6 @@
 import { fireEvent, render, waitFor, screen } from "@testing-library/react";
 import { recommendationRequestFixtures } from "fixtures/recommendationRequestFixtures";
-import RecommendationRequestsTable from "main/components/RecommendationRequests/RecommendationRequestTable";
+import RecommendationRequestTable from "main/components/RecommendationRequest/RecommendationRequestTable";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
@@ -16,7 +16,7 @@ vi.mock("react-router", async () => {
   };
 });
 
-describe("RecommendationRequestsTable tests", () => {
+describe("RecommendationRequestTable tests", () => {
   let queryClient;
   let axiosMock;
 
@@ -35,19 +35,19 @@ describe("RecommendationRequestsTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestsTable
-            recommendationRequests={[]}
+          <RecommendationRequestTable
+            recommendationRequest={[]}
             currentUser={currentUserFixtures.userOnly}
           />
         </MemoryRouter>
       </QueryClientProvider>,
     );
     expect(
-      screen.getByTestId("RecommendationRequestsTable"),
+      screen.getByTestId("RecommendationRequestTable"),
     ).toBeInTheDocument();
     expect(screen.getAllByRole("columnheader")).toHaveLength(7);
     expect(
-      screen.queryByTestId("RecommendationRequestsTable-row-0"),
+      screen.queryByTestId("RecommendationRequestTable-row-0"),
     ).not.toBeInTheDocument();
   });
 
@@ -57,8 +57,8 @@ describe("RecommendationRequestsTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestsTable
-            recommendationRequests={recommendationRequestFixtures.threeDates}
+          <RecommendationRequestTable
+            recommendationRequest={recommendationRequestFixtures.threeDates}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -83,7 +83,7 @@ describe("RecommendationRequestsTable tests", () => {
       "dateNeeded",
       "done",
     ];
-    const testId = "RecommendationRequestsTable";
+    const testId = "RecommendationRequestTable";
 
     expectedHeaders.forEach((headerText) => {
       const header = screen.getByText(headerText);
@@ -122,8 +122,8 @@ describe("RecommendationRequestsTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestsTable
-            recommendationRequests={recommendationRequestFixtures.threeDates}
+          <RecommendationRequestTable
+            recommendationRequest={recommendationRequestFixtures.threeDates}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -148,7 +148,7 @@ describe("RecommendationRequestsTable tests", () => {
       "dateNeeded",
       "done",
     ];
-    const testId = "RecommendationRequestsTable";
+    const testId = "RecommendationRequestTable";
 
     expectedHeaders.forEach((headerText) => {
       const header = screen.getByText(headerText);
@@ -189,8 +189,8 @@ describe("RecommendationRequestsTable tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestsTable
-            recommendationRequests={recommendationRequestFixtures.threeDates}
+          <RecommendationRequestTable
+            recommendationRequest={recommendationRequestFixtures.threeDates}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -199,12 +199,12 @@ describe("RecommendationRequestsTable tests", () => {
 
     await waitFor(() => {
       expect(
-        screen.getByTestId(`RecommendationRequestsTable-cell-row-0-col-id`),
+        screen.getByTestId(`RecommendationRequestTable-cell-row-0-col-id`),
       ).toHaveTextContent("1");
     });
 
     const editButton = screen.getByTestId(
-      `RecommendationRequestsTable-cell-row-0-col-Edit-button`,
+      `RecommendationRequestTable-cell-row-0-col-Edit-button`,
     );
     expect(editButton).toBeInTheDocument();
 
@@ -212,7 +212,7 @@ describe("RecommendationRequestsTable tests", () => {
 
     await waitFor(() =>
       expect(mockedNavigate).toHaveBeenCalledWith(
-        "/recommendationrequests/edit/1",
+        "/recommendationrequest/edit/1",
       ),
     );
   });
@@ -222,15 +222,15 @@ describe("RecommendationRequestsTable tests", () => {
     const currentUser = currentUserFixtures.adminUser;
 
     axiosMock
-      .onDelete("/api/recommendationrequests")
+      .onDelete("/api/recommendationrequest")
       .reply(200, { message: "Recommendation request deleted" });
 
     // act - render the component
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestsTable
-            recommendationRequests={recommendationRequestFixtures.threeDates}
+          <RecommendationRequestTable
+            recommendationRequest={recommendationRequestFixtures.threeDates}
             currentUser={currentUser}
           />
         </MemoryRouter>
@@ -241,12 +241,12 @@ describe("RecommendationRequestsTable tests", () => {
 
     await waitFor(() => {
       expect(
-        screen.getByTestId(`RecommendationRequestsTable-cell-row-0-col-id`),
+        screen.getByTestId(`RecommendationRequestTable-cell-row-0-col-id`),
       ).toHaveTextContent("1");
     });
 
     const deleteButton = screen.getByTestId(
-      `RecommendationRequestsTable-cell-row-0-col-Delete-button`,
+      `RecommendationRequestTable-cell-row-0-col-Delete-button`,
     );
     expect(deleteButton).toBeInTheDocument();
 

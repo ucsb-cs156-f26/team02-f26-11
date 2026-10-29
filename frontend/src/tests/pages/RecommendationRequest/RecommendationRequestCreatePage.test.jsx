@@ -1,5 +1,5 @@
 import { render, waitFor, fireEvent, screen } from "@testing-library/react";
-import RecommendationRequestCreatePage from "main/pages/RecommendationRequests/RecommendationRequestCreatePage";
+import RecommendationRequestCreatePage from "main/pages/RecommendationRequest/RecommendationRequestCreatePage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router";
 
@@ -73,7 +73,7 @@ describe("RecommendationRequestCreatePage tests", () => {
     };
 
     axiosMock
-      .onPost("/api/recommendationrequests/post")
+      .onPost("/api/recommendationrequest/post")
       .reply(202, recommendationRequest);
 
     render(
@@ -143,6 +143,6 @@ describe("RecommendationRequestCreatePage tests", () => {
     expect(mockToast).toBeCalledWith(
       "New recommendationRequest Created - id: 17 requesterEmail: student@ucsb.edu",
     );
-    expect(mockNavigate).toBeCalledWith({ to: "/recommendationrequests" });
+    expect(mockNavigate).toBeCalledWith({ to: "/recommendationrequest" });
   });
 });
