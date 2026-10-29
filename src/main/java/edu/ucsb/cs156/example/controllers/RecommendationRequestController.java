@@ -22,9 +22,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/** This is a REST controller for RecommendationRequests */
-@Tag(name = "RecommendationRequests")
-@RequestMapping("/api/recommendationrequests")
+/** This is a REST controller for RecommendationRequest */
+@Tag(name = "RecommendationRequest")
+@RequestMapping("/api/recommendationrequest")
 @RestController
 @Slf4j
 public class RecommendationRequestController extends ApiController {
@@ -32,16 +32,17 @@ public class RecommendationRequestController extends ApiController {
   @Autowired RecommendationRequestRepository recommendationRequestRepository;
 
   /**
-   * List all recommendation requests
+   * List recommendation request
    *
    * @return an iterable of RecommendationRequest
    */
-  @Operation(summary = "List all recommendation requests")
+  @Operation(summary = "List recommendation request")
   @PreAuthorize("hasRole('ROLE_USER')")
   @GetMapping("/all")
-  public Iterable<RecommendationRequest> allRecommendationRequests() {
-    Iterable<RecommendationRequest> requests = recommendationRequestRepository.findAll();
-    return requests;
+  public Iterable<RecommendationRequest> allRecommendationRequest() {
+    Iterable<RecommendationRequest> recommendationRequest =
+        recommendationRequestRepository.findAll();
+    return recommendationRequest;
   }
 
   /**

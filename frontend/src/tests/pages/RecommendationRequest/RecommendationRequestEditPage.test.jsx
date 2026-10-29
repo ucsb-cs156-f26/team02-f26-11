@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import RecommendationRequestCreatePage from "main/pages/RecommendationRequests/RecommendationRequestCreatePage";
+import RecommendationRequestEditPage from "main/pages/RecommendationRequest/RecommendationRequestEditPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router";
 
@@ -9,7 +9,7 @@ import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 import { expect } from "vitest";
 
-describe("RecommendationRequestCreatePage tests", () => {
+describe("RecommendationRequestEditPage tests", () => {
   const axiosMock = new AxiosMockAdapter(axios);
 
   const setupUserOnly = () => {
@@ -33,16 +33,15 @@ describe("RecommendationRequestCreatePage tests", () => {
     render(
       <QueryClientProvider client={queryClient}>
         <MemoryRouter>
-          <RecommendationRequestCreatePage />
+          <RecommendationRequestEditPage />
         </MemoryRouter>
       </QueryClientProvider>,
     );
 
     // assert
-
-    await screen.findByText("Create page not yet implemented");
+    await screen.findByText("Edit page not yet implemented");
     expect(
-      screen.getByText("Create page not yet implemented"),
+      screen.getByText("Edit page not yet implemented"),
     ).toBeInTheDocument();
   });
 });

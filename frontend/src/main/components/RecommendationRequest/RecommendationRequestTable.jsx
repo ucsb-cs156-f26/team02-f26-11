@@ -9,14 +9,14 @@ import {
 import { useNavigate } from "react-router";
 import { hasRole } from "main/utils/useCurrentUser";
 
-export default function RecommendationRequestsTable({
-  recommendationRequests,
+export default function RecommendationRequestTable({
+  recommendationRequest,
   currentUser,
 }) {
   const navigate = useNavigate();
 
   const editCallback = (cell) => {
-    navigate(`/recommendationrequests/edit/${cell.row.original.id}`);
+    navigate(`/recommendationrequest/edit/${cell.row.original.id}`);
   };
 
   // Stryker disable all : hard to test for query caching
@@ -24,7 +24,7 @@ export default function RecommendationRequestsTable({
   const deleteMutation = useBackendMutation(
     cellToAxiosParamsDelete,
     { onSuccess: onDeleteSuccess },
-    ["/api/recommendationrequests/all"],
+    ["/api/recommendationrequest/all"],
   );
   // Stryker restore all
 
@@ -70,7 +70,7 @@ export default function RecommendationRequestsTable({
         "Edit",
         "primary",
         editCallback,
-        "RecommendationRequestsTable",
+        "RecommendationRequestTable",
       ),
     );
     columns.push(
@@ -78,16 +78,16 @@ export default function RecommendationRequestsTable({
         "Delete",
         "danger",
         deleteCallback,
-        "RecommendationRequestsTable",
+        "RecommendationRequestTable",
       ),
     );
   }
 
   return (
     <OurTable
-      data={recommendationRequests}
+      data={recommendationRequest}
       columns={columns}
-      testid={"RecommendationRequestsTable"}
+      testid={"RecommendationRequestTable"}
     />
   );
 }
