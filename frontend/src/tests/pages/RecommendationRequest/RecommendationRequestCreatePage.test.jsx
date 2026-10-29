@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import RecommendationRequestCreatePage from "main/pages/RecommendationRequest/RecommendationRequestCreatePage";
+import RecommendationRequestCreatePage from "main/pages/RecommendationRequests/RecommendationRequestCreatePage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { MemoryRouter } from "react-router";
 
@@ -10,39 +10,39 @@ import AxiosMockAdapter from "axios-mock-adapter";
 import { expect } from "vitest";
 
 describe("RecommendationRequestCreatePage tests", () => {
-  const axiosMock = new AxiosMockAdapter(axios);
+    const axiosMock = new AxiosMockAdapter(axios);
 
-  const setupUserOnly = () => {
-    axiosMock.reset();
-    axiosMock.resetHistory();
-    axiosMock
-      .onGet("/api/currentUser")
-      .reply(200, apiCurrentUserFixtures.userOnly);
-    axiosMock
-      .onGet("/api/systemInfo")
-      .reply(200, systemInfoFixtures.showingNeither);
-  };
+    const setupUserOnly = () => {
+        axiosMock.reset();
+        axiosMock.resetHistory();
+        axiosMock
+            .onGet("/api/currentUser")
+            .reply(200, apiCurrentUserFixtures.userOnly);
+        axiosMock
+            .onGet("/api/systemInfo")
+            .reply(200, systemInfoFixtures.showingNeither);
+    };
 
-  const queryClient = new QueryClient();
-  test("Renders expected content", async () => {
-    // arrange
+    const queryClient = new QueryClient();
+    test("Renders expected content", async () => {
+        // arrange
 
-    setupUserOnly();
+        setupUserOnly();
 
-    // act
-    render(
-      <QueryClientProvider client={queryClient}>
-        <MemoryRouter>
-          <RecommendationRequestCreatePage />
-        </MemoryRouter>
-      </QueryClientProvider>,
-    );
+        // act
+        render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <RecommendationRequestCreatePage />
+                </MemoryRouter>
+            </QueryClientProvider>,
+        );
 
-    // assert
+        // assert
 
-    await screen.findByText("Create page not yet implemented");
-    expect(
-      screen.getByText("Create page not yet implemented"),
-    ).toBeInTheDocument();
-  });
+        await screen.findByText("Create page not yet implemented");
+        expect(
+            screen.getByText("Create page not yet implemented"),
+        ).toBeInTheDocument();
+    });
 });
