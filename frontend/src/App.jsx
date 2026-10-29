@@ -174,19 +174,19 @@ function App() {
       )}
       {hasRole(currentUser, "ROLE_USER") && (
         <>
-          <Route exact path="/placeholder" element={<ArticlesIndexPage />} />
+          <Route exact path="/articles" element={<ArticlesIndexPage />} />
         </>
       )}
       {hasRole(currentUser, "ROLE_ADMIN") && (
         <>
           <Route
             exact
-            path="/Articles/edit/:id"
+            path="/articles/edit/:id"
             element={<ArticlesEditPage />}
           />
           <Route
             exact
-            path="/Articles/create"
+            path="/articles/create"
             element={<ArticlesCreatePage />}
           />
         </>
