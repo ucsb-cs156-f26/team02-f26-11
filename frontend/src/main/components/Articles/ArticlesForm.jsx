@@ -100,7 +100,6 @@ function ArticlesForm({
             <Form.Control.Feedback type="invalid">
               {errors.url && "URL is required."}
             </Form.Control.Feedback>
-            
           </Form.Group>
         </Col>
       </Row>
