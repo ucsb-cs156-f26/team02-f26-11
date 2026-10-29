@@ -29,7 +29,7 @@ describe("RecommendationRequestForm tests", () => {
     render(
       <Router>
         <RecommendationRequestForm
-          initialContents={recommendationRequestFixtures.oneDate}
+          initialContents={recommendationRequestFixtures.oneRequest}
         />
       </Router>,
     );
