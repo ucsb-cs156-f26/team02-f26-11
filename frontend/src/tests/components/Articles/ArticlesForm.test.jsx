@@ -35,27 +35,7 @@ describe("ArticlesForm tests", () => {
     expect(screen.getByText(/Id/)).toBeInTheDocument();
     expect(screen.getByTestId(/ArticlesForm-id/)).toHaveValue("1");
   });
-  /*
-  test("Correct Error messsages on bad input", async () => {
-    render(
-      <Router>
-        <ArticlesForm />
-      </Router>,
-    );
-    await screen.findByTestId("ArticlesForm-title");
-    const dateAddedField = screen.getByTestId("ArticlesForm-dateAdded");
-    const submitButton = screen.getByTestId("ArticlesForm-submit");
 
-    fireEvent.change(dateAddedField, { target: { value: "bad-input" } });
-    fireEvent.click(submitButton);
-    await screen.findByText(/dateAdded must be in ISO format/);
-    expect(
-      screen.getByText(/dateAdded must be in ISO format/),
-    ).toBeInTheDocument();
-    
-
-  });
-  */
   test("Correct Error messsages on missing input", async () => {
     render(
       <Router>
@@ -68,7 +48,9 @@ describe("ArticlesForm tests", () => {
     fireEvent.click(submitButton);
 
     await screen.findByText(/Title is required./);
-    //expect(screen.getByText(/Title is required./)).toBeInTheDocument();
+    expect(screen.getByText(/URL is required./)).toBeInTheDocument();
+    expect(screen.getByText(/Explanation is required./)).toBeInTheDocument();
+    expect(screen.getByText(/Email is required./)).toBeInTheDocument();
     expect(screen.getByText(/dateAdded is required./)).toBeInTheDocument();
   });
 
@@ -105,15 +87,11 @@ describe("ArticlesForm tests", () => {
     expect(
       screen.queryByText(/dateAdded is required./),
     ).not.toBeInTheDocument();
-    expect(
-      screen.queryByText(/URL is required./),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText(/URL is required./)).not.toBeInTheDocument();
     expect(
       screen.queryByText(/Explanation is required./),
     ).not.toBeInTheDocument();
-    expect(
-      screen.queryByText(/Email is required./),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText(/Email is required./)).not.toBeInTheDocument();
   });
 
   test("that navigate(-1) is called when Cancel is clicked", async () => {
