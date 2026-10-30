@@ -35,7 +35,7 @@ public class UCSBOrganizationWebIT extends WebTestCase {
         .hasText("Sun Club");
     assertThat(page.getByTestId("UCSBOrganizationTable-cell-row-0-col-orgTranslation"))
         .hasText("Sunshine Club @ UCSB");
-    assertThat(page.getByTestId("UCSBOrganizationTable-cell-row-0-col-inactive")).hasText("No");
+    assertThat(page.getByTestId("UCSBOrganizationTable-cell-row-0-col-inactive")).hasText("false");
 
     page.getByTestId("UCSBOrganizationTable-cell-row-0-col-Edit-button").click();
     assertThat(page.getByText("Edit Organization")).isVisible();
