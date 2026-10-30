@@ -27,7 +27,7 @@ public class UCSBOrganizationWebIT extends WebTestCase {
     page.getByTestId("UCSBOrganizationForm-orgCode").fill("SUN");
     page.getByTestId("UCSBOrganizationForm-orgTranslationShort").fill("Sun Club");
     page.getByTestId("UCSBOrganizationForm-orgTranslation").fill("Sunshine Club @ UCSB");
-    page.getByTestId("UCSBOrganizationForm-inactive").fill("No");
+    page.getByTestId("UCSBOrganizationForm-inactive").selectOption("No");
     page.getByTestId("UCSBOrganizationForm-submit").click();
 
     assertThat(page.getByTestId("UCSBOrganizationTable-cell-row-1-col-orgCode")).hasText("SUN");
