@@ -30,7 +30,7 @@ public class UCSBOrganizationWebIT extends WebTestCase {
     page.getByTestId("UCSBOrganizationForm-inactive").selectOption("No");
     page.getByTestId("UCSBOrganizationForm-submit").click();
 
-    assertThat(page.getByTestId("UCSBOrganizationTable-cell-row-1-col-orgCode")).hasText("SUN");
+    assertThat(page.getByTestId("UCSBOrganizationTable-cell-row-0-col-orgCode")).hasText("SUN");
     assertThat(page.getByTestId("UCSBOrganizationTable-cell-row-1-col-orgTranslationShort"))
         .hasText("Sun Club");
     assertThat(page.getByTestId("UCSBOrganizationTable-cell-row-2-col-orgTranslation"))
