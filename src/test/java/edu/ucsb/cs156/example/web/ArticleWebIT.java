@@ -31,7 +31,6 @@ public class ArticleWebIT extends WebTestCase {
     page.getByTestId("ArticlesForm-dateAdded").fill("2005-05-05T05:05:05");
     page.getByTestId("ArticlesForm-submit").click();
 
-    assertThat(page.getByTestId("ArticlesTable-cell-row-0-col-explanation"))
-        .hasText("gotta have a 1");
+    assertThat(page.getByTestId("ArticlesTable-cell-row-0-col-title")).hasText("article1");
   }
 }
