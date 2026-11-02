@@ -17,7 +17,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @DirtiesContext(classMode = ClassMode.BEFORE_EACH_TEST_METHOD)
 public class ArticleWebIT extends WebTestCase {
   @Test
-  public void admin_user_can_create_edit_delete_restaurant() throws Exception {
+  public void admin_user_can_create_edit_delete_article() throws Exception {
     setupUser(true);
 
     page.getByText("Articles").click();
@@ -29,9 +29,9 @@ public class ArticleWebIT extends WebTestCase {
     page.getByTestId("ArticlesForm-explanation").fill("gotta have a 1");
     page.getByTestId("ArticlesForm-email").fill("email1");
     page.getByTestId("ArticlesForm-dateAdded").fill("2005-05-05T05:05:05");
-    page.getByTestId("RestaurantForm-submit").click();
+    page.getByTestId("ArticlesForm-submit").click();
 
-    assertThat(page.getByTestId("RestaurantTable-cell-row-0-col-explanation"))
+    assertThat(page.getByTestId("ArticlesTable-cell-row-0-col-explanation"))
         .hasText("gotta have a 1");
   }
 }
